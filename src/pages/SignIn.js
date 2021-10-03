@@ -1,29 +1,31 @@
 import React from 'react'
 import logo from '../asset/logo.png'
-import '../style/SignIn.css'
-
+import { Form, Button, Badge} from 'react-bootstrap';
 
 function SignIn() {
     return (
-        <main>
-            <div class="logo">
-                <img src={logo} alt="" srcset="" />
-            </div>
-            <div class="login-form">
-                <h1>Login</h1>
-                <form action="">
-                    <label for="username">Username</label>
-                    <input class="input-username" type="text" id="username" required />
-                    <label for="password">Password</label>
-                    <input class="input-password" type="text" id="password" required />
-                    <button>Login</button>
-                </form>
-                <div class="help-section">
-                    <a href="sign_up.html">Sign Up</a>
-                    <a href="">Lupa password</a>
-                </div>
-            </div>
-        </main>
+        <div className="container">
+            <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Text className="text-muted">
+                        We'll never share your email with anyone else. <Badge>Halo dunia</Badge>
+                    </Form.Text>
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check type="checkbox" label="Check me out" />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+            </Form>
+        </div>
     )
 }
 
